@@ -1,0 +1,73 @@
+PES6 native-port work queue and resumption
+
+Read checkpoint.json first. The first validated portable helper is
+native/pes6_player_fields.c. It is a byte-level player-record transformation,
+not a match simulation. Its 10,000 differential cases compare C output with
+the original x86 routine at 0x00a4b040, including overlap and special IDs.
+The attribute meanings remain unknown. Do not infer a full port from counts
+of automatically recovered functions or files of pseudocode.
+
+Preferred route
+Use the Windows PES6 PC binary and build-specific kitserver/kitserver6 source.
+Its file signature and selected instructions matched the PES6 PC map. Keep
+PS2 work as reference rather than the critical path to a native prototype.
+Use this repository's Ghidra bridge; another AI wrapper is optional.
+
+Local reference setup
+Place the exact pinned reference executable at windows/nocd/pes6.exe.
+checkpoint.json records the authorized archive URL and expected SHA256.
+Download and extract with 7-Zip; this 7z uses BCJ2, which py7zr cannot extract.
+Do not execute the installer or game merely to extract it.
+Do not substitute another executable without recording its hash and rechecking
+all version-specific maps. The downloaded executable is a modified PC binary;
+its equivalence to an unmodified retail executable is unverified.
+
+Tests
+From the repository root, run:
+  uv run pytest -q
+From pes6_port, with the pinned executable available, run:
+  python inspect_pe.py windows/nocd/pes6.exe windows/pe-inventory.json
+  uv run --with unicorn python native/test_player_fields.py
+The latter builds a native shared library with GCC and executes only the
+isolated reference routine in Unicorn. It does not require running Windows.
+
+Ghidra
+This work used Ghidra 12.1.4 and JDK 21. The PS2 processor extension is
+chaoticgd/ghidra-emotionengine-reloaded v2.1.38, built for Ghidra 12.1.4.
+ExportAnalysis.java writes function maps, call edges, string references and
+unverified pseudocode. Give it output directory and time budget in seconds.
+An optional third argument 'resume' reuses existing exported functions for the
+same binary. Its source.sha256 prevents reuse across different binaries.
+ApplyKitserverAnchors.java checks the PC version signature, annotates candidates,
+and exports selected functions; give it an output directory. Labels explicitly
+remain candidates until independently validated.
+prepare_overlays.py expects original local boot and OVER.AFS files in results.
+It synthesizes analysis containers, not rebuilt or playable games.
+
+Per-run operating rule
+Resume the next incomplete task. Prefer small, pure routines with observable
+inputs/outputs. Recover a function's complete control-flow graph, including
+every return branch, before writing a translation. Verify it against original
+instructions using differential tests where feasible. Record evidence and
+unknowns. For complex functions needing globals or hardware, recover the state
+layout and dependencies first; do not insert return-zero placeholders and
+mark the function complete. Progress from helpers to input, player data, ball
+state/physics, match timing/rules, AI and controller assignment.
+
+Use a single headless native gameplay core. CPU vs CPU, P1 vs CPU and P1 vs P2
+must select command sources for that same core. Add the 2D renderer and Unreal
+C++ adapter after a minimal match loop works. The standalone C ABI should not
+depend on Unreal types.
+
+Persist a checkpoint after each tested batch: implemented routines, reference
+hash/address, test results, unresolved dependencies and exact next task. Save
+original source, tools, tests and notes to the pes6-port-foundation branch.
+Keep original binaries, assets and raw decompiled game code out of that branch.
+Do not repeatedly rebuild setup when a valid saved environment is available.
+At the end of the run's supported execution budget, checkpoint and report actual
+changes. If the environment or tools are unavailable, record that specific
+blocker instead of claiming work continued. Scheduling does not guarantee that
+this execution workspace or its private files persist between runs.
+
+Team-slot helper: native/test_team_slot.py validates PC 0x00866d50 with 75,536 comparisons, including all low-word IDs. Pass the original global slot values as uint32_t; do not interpret returned game addresses as host pointers.
+Automation: Continue PES6 native port is enabled hourly. Immediate run API returned 404 Action not found. Scheduled command execution has NOT been verified; report actual execution evidence.

@@ -1,0 +1,16 @@
+{
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "reference_function": "0x866d50",
+  "cases": 75536,
+  "passed": true,
+  "seed": "0x866d50",
+  "coverage": [
+    "all 65536 low-word IDs",
+    "upper-word truncation",
+    "randomized global slots",
+    "zero and all-ones slots",
+    "unchanged global slots",
+    "return value"
+  ],
+  "limitation": "Isolated address selection helper; team identity meanings and full-game behavior remain unverified."
+}

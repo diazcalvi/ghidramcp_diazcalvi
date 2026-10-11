@@ -1,0 +1,18 @@
+{
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "reference_function": "0xa4b040",
+  "cases": 10000,
+  "seed": "0x50455336",
+  "passed": true,
+  "coverage": [
+    "random records",
+    "unaligned buffers",
+    "forward/backward overlap",
+    "identical buffers",
+    "field9 boundaries",
+    "special player IDs",
+    "full-buffer side effects",
+    "return value"
+  ],
+  "limitation": "Isolated routine under x86 emulation; no full-game runtime validation."
+}

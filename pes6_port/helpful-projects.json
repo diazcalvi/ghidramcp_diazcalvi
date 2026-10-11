@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-11",
+  "projects": [
+    {
+      "repo": "chaoticgd/ghidra-emotionengine-reloaded",
+      "role": "PS2 R5900/MMI/VU0-aware disassembly and decompilation; PCSX2 save-state importer",
+      "limit": "Architecture support does not identify PES6 gameplay semantics.",
+      "url": "https://github.com/chaoticgd/ghidra-emotionengine-reloaded"
+    },
+    {
+      "repo": "kitserver/kitserver6",
+      "role": "PES6 PC-specific source: input masks, version-dependent hook addresses, team/kit structures, archive access, camera and timing hooks",
+      "limit": "PC addresses cannot be applied to PS2; supported executable version must be matched.",
+      "url": "https://github.com/kitserver/kitserver6"
+    },
+    {
+      "repo": "lazanet/PES6-AFS-Tools",
+      "role": "PES-era AFS/TXS/PIC format documentation in Java snippets",
+      "limit": "Incomplete snippets; README says swizzle/unswizzle missing; PIC.java has inconsistent declarations. Treat as documentation, not a finished converter.",
+      "url": "https://github.com/lazanet/PES6-AFS-Tools"
+    },
+    {
+      "repo": "ran-j/PS2Recomp",
+      "role": "Experimental R5900-to-C++ static recompiler plus partial runtime",
+      "limit": "Hardware paths are stubbed and VU/GS performance is limited. Generated instruction-level C++ is not recovered original source or an Unreal game.",
+      "url": "https://github.com/ran-j/PS2Recomp"
+    },
+    {
+      "repo": "bethington/ghidra-mcp",
+      "role": "Alternative AI-facing Ghidra bridge advertising batch analysis, typing, script execution, P-code and debugger tooling",
+      "limit": "README reviewed; capabilities and PES6 suitability not tested. Does not autonomously guarantee correct reverse engineering.",
+      "url": "https://github.com/bethington/ghidra-mcp"
+    },
+    {
+      "repo": "mrphrazer/ghidra-headless-mcp",
+      "role": "Alternative PyGhidra headless MCP with project, function, types, call graphs and script APIs",
+      "limit": "README reviewed; not installed or tested here. Existing fork may already suffice.",
+      "url": "https://github.com/mrphrazer/ghidra-headless-mcp"
+    },
+    {
+      "repo": "lazanet/PES6-EXE-modifier",
+      "role": "Known PC executable constant offsets: servers, option-file path and Master League starting year",
+      "limit": "Narrow modifier; camera feature documented as broken. Not a game decompiler.",
+      "url": "https://github.com/lazanet/PES6-EXE-modifier"
+    },
+    {
+      "repo": "PCSX2/pcsx2",
+      "role": "PS2 behavioral/debugging reference",
+      "limit": "Not run here; requires separately available PS2 BIOS and a complete game disc.",
+      "url": "https://github.com/PCSX2/pcsx2"
+    },
+    {
+      "repo": "SiD3W4y/mhfu-re",
+      "url": "https://github.com/SiD3W4y/mhfu-re/blob/master/doc/ovl.txt",
+      "role": "MWo3 overlay header research in another MIPS title; informed format investigation",
+      "limit": "PSP title rather than PES6. The PES6 layout was checked against all 37 recovered payloads; gameplay semantics do not transfer."
+    }
+  ]
+}
