@@ -1,0 +1,16 @@
+{
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "reference_function": "0x9d5370",
+  "cases": 10000,
+  "passed": true,
+  "seed": "0x9d5370",
+  "coverage": [
+    "all selection byte values",
+    "eight distinct record slots",
+    "random full records",
+    "destination guard bytes",
+    "source unchanged",
+    "return stack"
+  ],
+  "limitation": "Disjoint original source/destination regions; ownership meanings unresolved."
+}
