@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-11",
+  "preferred_route": "PES6 PC -> native C functions -> shared simulation -> 2D and Unreal C++ adapter",
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "pc_source_archive": "https://archive.org/download/pro-evolution-soccer-6-pc.7z_202402/NoCD.7z",
+  "ps2_source_iso": "https://archive.org/download/pes6_campeonatobrasileiro2007/NEW.ISO",
+  "portable_helpers_tested": 1,
+  "differential_cases_passed": 10000,
+  "repository_tests_passed": 42,
+  "native_match_simulation_complete": false,
+  "renderers_complete": false,
+  "match_modes_complete": false,
+  "prior_workspace": "/workspace/pes6-analysis",
+  "analysis_coverage": {
+    "ps2_boot": {
+      "function_count": 8820,
+      "pseudocode_exported": 8820,
+      "decompile_failed": 0,
+      "budget_not_attempted": 0,
+      "language": "r5900:LE:32:default",
+      "verified_gameplay_functions": 0
+    },
+    "ps2_main_plus_game_overlay": {
+      "function_count": 13460,
+      "pseudocode_exported": 13458,
+      "decompile_failed": 2,
+      "budget_not_attempted": 0,
+      "language": "r5900:LE:32:default",
+      "verified_gameplay_functions": 0
+    },
+    "pc": {
+      "function_count": 14156,
+      "pseudocode_exported": 14150,
+      "decompile_failed": 6,
+      "budget_not_attempted": 0,
+      "language": "x86:LE:32:default",
+      "verified_gameplay_functions": 0
+    }
+  },
+  "next_tasks": [
+    "Validate function boundaries and annotate additional Kitserver anchors",
+    "Recover another small pure helper and test against original x86 instructions",
+    "Determine player record bitfield meanings from callers and data access",
+    "Trace controller-to-team selection including CPU vs CPU, P1 vs CPU, P1 vs P2",
+    "Recover ball state and fixed-step match update boundaries",
+    "Recover AI and rules with behavioral reference",
+    "Build shared headless match simulation, then 2D and Unreal adapters"
+  ],
+  "limitations": [
+    "Windows auto-analysis hit its initial 180-second budget; recovered candidates are incomplete and unverified semantically",
+    "Several decompiler warnings/failures remain",
+    "PS2 game overlay analysis containers use inferred size fields, checked against all payloads but not runtime verified",
+    "Full game assets and gameplay execution not available in the current workspace",
+    "Raw decompiled game code and binaries remain local and are not stored in this branch"
+  ]
+}

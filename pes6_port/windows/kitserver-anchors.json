@@ -1,0 +1,16 @@
+{
+  "executable_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "kitserver_version_signature": "PES6 PC",
+  "runtime_verified": false,
+  "anchors": [
+    {"name":"C_GETTEAMINFO", "address":"0x00865240", "kind":"function_candidate", "source":"src/hook.cpp", "instruction_sample_verified":true},
+    {"name":"C_COPYPLAYERDATA", "address":"0x00a4b040", "kind":"function_candidate", "source":"src/fserv.h", "instruction_sample_verified":true},
+    {"name":"C_CLEANINPUTTABLE_HOOK", "address":"0x009cd4f2", "kind":"instruction_site", "source":"src/hook.cpp", "instruction_sample_verified":true},
+    {"name":"INPUT_TABLE", "address":"0x03a71254", "kind":"data", "size":96, "source":"src/hook.cpp and src/input.cpp", "instruction_reference_verified":true},
+    {"name":"PLAYERS_LINEUP", "address":"0x03bdc980", "kind":"data_candidate", "source":"src/hook.cpp"},
+    {"name":"PLAYERDATA_BASE", "address":"0x03bcf55c", "kind":"data_candidate", "source":"src/hook.cpp"},
+    {"name":"GAME_MODE", "address":"0x03be12c9", "kind":"data_candidate", "source":"src/hook.cpp", "enum_values":"unknown"},
+    {"name":"C_BEGIN_RENDERPLAYER_CS", "address":"0x008acf93", "kind":"instruction_site_candidate", "source":"src/hook.cpp"},
+    {"name":"C_PES_GETTEXTURE", "address":"0x00408c20", "kind":"function_candidate", "source":"src/hook.cpp"}
+  ]
+}
