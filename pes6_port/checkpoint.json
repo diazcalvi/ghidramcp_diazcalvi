@@ -4,8 +4,8 @@
   "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
   "pc_source_archive": "https://archive.org/download/pro-evolution-soccer-6-pc.7z_202402/NoCD.7z",
   "ps2_source_iso": "https://archive.org/download/pes6_campeonatobrasileiro2007/NEW.ISO",
-  "portable_helpers_tested": 4,
-  "differential_cases_passed": 377680,
+  "portable_helpers_tested": 6,
+  "differential_cases_passed": 528752,
   "repository_tests_passed": 42,
   "native_match_simulation_complete": false,
   "renderers_complete": false,
@@ -38,7 +38,7 @@
     }
   },
   "next_tasks": [
-    "Recover 0x865100 complementary team-record lookup, including register-based 0x864fb0 argument; then integrate 0x865240",
+    "Integrate tested category and both record lookups into 0x865240 team-info selection; differential-test negative/out-of-range indices and special 0x110/0x111 IDs",
     "Trace numeric team categories into match setup; do not infer category meanings from numbers alone",
     "Validate function boundaries and annotate additional Kitserver anchors",
     "Recover another small pure helper and test against original x86 instructions",
@@ -62,5 +62,14 @@
     "execution_verified": false,
     "immediate_run_error": "404 Action not found",
     "note": "Schedule creation confirmed; no successful scheduled coding run observed."
+  },
+  "last_batch": {
+    "functions": [
+      "0x864fb0",
+      "0x865100"
+    ],
+    "cases_passed": 151072,
+    "reused_branch": "pes6-port-foundation@5c5d47a3bccbdd8c231bf2d991ea16aee3808449",
+    "command_execution_verified": true
   }
 }
