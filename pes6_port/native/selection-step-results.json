@@ -1,0 +1,18 @@
+{
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "reference_function": "0x9c2250",
+  "cases": 41504,
+  "passed": true,
+  "seed": "0x9c2250",
+  "coverage": [
+    "all 256 direction bytes",
+    "simultaneous-direction precedence",
+    "caller bounds -4..-1 and 1..4",
+    "upper==1 special branch",
+    "reversed bounds",
+    "signed extremes and arithmetic wrap",
+    "random signed inputs",
+    "stack unchanged"
+  ],
+  "limitation": "Selection transition only; controller ownership and CPU mode meanings not yet validated."
+}
