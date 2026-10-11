@@ -4,8 +4,8 @@
   "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
   "pc_source_archive": "https://archive.org/download/pro-evolution-soccer-6-pc.7z_202402/NoCD.7z",
   "ps2_source_iso": "https://archive.org/download/pes6_campeonatobrasileiro2007/NEW.ISO",
-  "portable_helpers_tested": 14,
-  "differential_cases_passed": 1425920,
+  "portable_helpers_tested": 15,
+  "differential_cases_passed": 1449920,
   "repository_tests_passed": 42,
   "native_match_simulation_complete": false,
   "renderers_complete": false,
@@ -38,7 +38,7 @@
     }
   },
   "next_tasks": [
-    "Resolve callbacks installed by 0xa4c3b0 and callers' mode indices; recover 0x9c6c70 availability updates with complete dependency contexts",
+    "Recover callback 0xa69760 and forwarders 0xa4b6d0 etc; trace forwarded targets 0xa9dc40/0xa9de10/0xa9de40 into match mode initialization",
     "Trace numeric team categories into match setup; do not infer category meanings from numbers alone",
     "Validate function boundaries and annotate additional Kitserver anchors",
     "Recover another small pure helper and test against original x86 instructions",
@@ -65,9 +65,9 @@
   },
   "last_batch": {
     "functions": [
-      "0xa4c3b0"
+      "0xa4c470"
     ],
-    "cases_passed": 12000,
+    "cases_passed": 24000,
     "command_execution_verified": true
   }
 }
