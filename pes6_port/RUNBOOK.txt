@@ -61,7 +61,7 @@ depend on Unreal types.
 
 Persist a checkpoint after each tested batch: implemented routines, reference
 hash/address, test results, unresolved dependencies and exact next task. Save
-original source, tools, tests and notes to the pes6-port-foundation branch.
+original source, tools, tests and notes to a fresh continuation branch from main.
 Keep original binaries, assets and raw decompiled game code out of that branch.
 Do not repeatedly rebuild setup when a valid saved environment is available.
 At the end of the run's supported execution budget, checkpoint and report actual
@@ -73,3 +73,5 @@ Team-slot helper: native/test_team_slot.py validates PC 0x00866d50 with 75,536 c
 Automation: Continue PES6 native port is enabled hourly. Immediate run API returned 404 Action not found. Scheduled command execution has NOT been verified; report actual execution evidence.
 
 Team-category helper: native/test_team_category.py validates PC 0x00866d80 with 206,608 original-x86 comparisons. Includes exhaustive direct IDs and both special-slot referenced IDs. Caller supplies slot presence and referenced low-word ID; categories 0,2,3 have unverified semantic names. Main contains tested foundation; continuation workers should create a fresh branch from current main and merge tested batches as authorized.
+
+Team-record lookup: native/test_team_record.py validates PC 0x864ef0 with 85,536 original-x86 comparisons using real slot/category/base callees. Context parameters contain game addresses as uint32_t, not host pointers. The category call is read-only and its unused result does not affect address selection. Next recover 0x865100 and its register-based helper 0x864fb0 before combining lookup paths in 0x865240.
