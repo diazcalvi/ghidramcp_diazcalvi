@@ -1,0 +1,28 @@
+{
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "cases": 151072,
+  "functions": [
+    {
+      "reference_function": "0x9c60b0",
+      "cases": 75536,
+      "passed": true
+    },
+    {
+      "reference_function": "0x9c6150",
+      "cases": 75536,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "coverage": [
+    "all 256 states and 256 direction bytes per handler",
+    "real original direction callee",
+    "target aliases scan table or separate records",
+    "all eight scan positions",
+    "full record/table side effects",
+    "ignored upper register bits",
+    "all eight input controllers",
+    "callee-saved ESI and input table"
+  ],
+  "limitation": "Selection handlers only; ownership meaning and match mode integration remain unresolved."
+}

@@ -4,8 +4,8 @@
   "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
   "pc_source_archive": "https://archive.org/download/pro-evolution-soccer-6-pc.7z_202402/NoCD.7z",
   "ps2_source_iso": "https://archive.org/download/pes6_campeonatobrasileiro2007/NEW.ISO",
-  "portable_helpers_tested": 8,
-  "differential_cases_passed": 1114544,
+  "portable_helpers_tested": 10,
+  "differential_cases_passed": 1265616,
   "repository_tests_passed": 42,
   "native_match_simulation_complete": false,
   "renderers_complete": false,
@@ -38,7 +38,7 @@
     }
   },
   "next_tasks": [
-    "Recover controller selection record transitions 0x9c60b0/0x9c6150: input ECX record base, EAX record index; prove signed ownership meaning from consumers before implementing match modes",
+    "Trace consumers of signed controller selections at 0xd537f9 (+0x34 stride); prove CPU/human ownership and map selected controller masks into match setup",
     "Trace numeric team categories into match setup; do not infer category meanings from numbers alone",
     "Validate function boundaries and annotate additional Kitserver anchors",
     "Recover another small pure helper and test against original x86 instructions",
@@ -65,9 +65,10 @@
   },
   "last_batch": {
     "functions": [
-      "0x9c2250"
+      "0x9c60b0",
+      "0x9c6150"
     ],
-    "cases_passed": 41504,
+    "cases_passed": 151072,
     "command_execution_verified": true
   }
 }
