@@ -1,0 +1,18 @@
+{
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "reference_function": "0x865240",
+  "cases": 544288,
+  "passed": true,
+  "seed": "0x866d50",
+  "coverage": [
+    "all 65536 low-word IDs with eight index boundaries",
+    "special IDs permit indices >=4",
+    "real category and slot callees",
+    "missing special slots",
+    "special record address wrapping to zero",
+    "random table bases and overflow",
+    "upper-word truncation",
+    "return value"
+  ],
+  "limitation": "Build-specific game address selection, not host memory access or full-game validation."
+}
