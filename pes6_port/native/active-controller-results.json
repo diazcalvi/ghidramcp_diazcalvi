@@ -1,0 +1,18 @@
+{
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "reference_function": "0x9c6be0",
+  "cases": 85536,
+  "passed": true,
+  "seed": "0x9c6be0",
+  "coverage": [
+    "all mode IDs and signed preference bytes",
+    "real mode and game-mode callees",
+    "two-slot and eight-slot fallback",
+    "preferred selection precedence",
+    "nonboolean mode/enable bytes",
+    "negative preferred results",
+    "random bit tables and connected masks",
+    "callee-saved registers and table unchanged"
+  ],
+  "limitation": "Menu active-controller selection; mode byte and gameplay ownership semantics unresolved."
+}

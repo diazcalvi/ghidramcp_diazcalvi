@@ -4,8 +4,8 @@
   "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
   "pc_source_archive": "https://archive.org/download/pro-evolution-soccer-6-pc.7z_202402/NoCD.7z",
   "ps2_source_iso": "https://archive.org/download/pes6_campeonatobrasileiro2007/NEW.ISO",
-  "portable_helpers_tested": 12,
-  "differential_cases_passed": 1328384,
+  "portable_helpers_tested": 13,
+  "differential_cases_passed": 1413920,
   "repository_tests_passed": 42,
   "native_match_simulation_complete": false,
   "renderers_complete": false,
@@ -38,7 +38,7 @@
     }
   },
   "next_tasks": [
-    "Trace mode/availability predicate 0xa4b6e0 and selection consumers 0x9c6f80/0x9c5d40; distinguish record state byte from signed side selection and connected-controller masks",
+    "Trace initialized mode state 0x3a8ab28 (0xa4c690/0xa4c3b0) and record availability updates 0x9c6c70; prove gameplay ownership before wiring CPU/human commands",
     "Trace numeric team categories into match setup; do not infer category meanings from numbers alone",
     "Validate function boundaries and annotate additional Kitserver anchors",
     "Recover another small pure helper and test against original x86 instructions",
@@ -65,9 +65,9 @@
   },
   "last_batch": {
     "functions": [
-      "0x9d5430"
+      "0x9c6be0"
     ],
-    "cases_passed": 52768,
+    "cases_passed": 85536,
     "command_execution_verified": true
   }
 }
