@@ -71,3 +71,5 @@ this execution workspace or its private files persist between runs.
 
 Team-slot helper: native/test_team_slot.py validates PC 0x00866d50 with 75,536 comparisons, including all low-word IDs. Pass the original global slot values as uint32_t; do not interpret returned game addresses as host pointers.
 Automation: Continue PES6 native port is enabled hourly. Immediate run API returned 404 Action not found. Scheduled command execution has NOT been verified; report actual execution evidence.
+
+Team-category helper: native/test_team_category.py validates PC 0x00866d80 with 206,608 original-x86 comparisons. Includes exhaustive direct IDs and both special-slot referenced IDs. Caller supplies slot presence and referenced low-word ID; categories 0,2,3 have unverified semantic names. Main contains tested foundation; continuation workers should create a fresh branch from current main and merge tested batches as authorized.
