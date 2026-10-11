@@ -1,0 +1,18 @@
+{
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "reference_function": "0x864fb0",
+  "base_global": "0x1132068",
+  "cases": 65536,
+  "passed": true,
+  "seed": "0x864fb0",
+  "coverage": [
+    "all 65536 low-word IDs",
+    "randomized ignored upper words",
+    "randomized 32-bit table bases including null",
+    "range and stride arithmetic",
+    "callee-saved ESI",
+    "stack and global unchanged",
+    "return value"
+  ],
+  "limitation": "The semantic identity of the records at this base remains unresolved."
+}
