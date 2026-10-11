@@ -1,0 +1,17 @@
+{
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "reference_function": "0x866d80",
+  "cases": 206608,
+  "passed": true,
+  "seed": "0x866d50",
+  "coverage": [
+    "all 65536 direct IDs",
+    "all 65536 indirect IDs through each special slot",
+    "missing slots",
+    "special self/cross references",
+    "upper-word truncation",
+    "unchanged global slots",
+    "return value"
+  ],
+  "limitation": "Numeric categories verified; category meanings and gameplay integration remain unverified."
+}
