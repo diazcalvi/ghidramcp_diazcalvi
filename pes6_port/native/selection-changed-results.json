@@ -1,0 +1,16 @@
+{
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "reference_function": "0x9d5430",
+  "cases": 52768,
+  "passed": true,
+  "seed": "0x9d5430",
+  "coverage": [
+    "all 256 selection bytes at each of eight slots",
+    "16 snapshot/current/sticky combinations",
+    "noncanonical nonzero flags preserved",
+    "random multi-slot records",
+    "full global and record buffers",
+    "return stack"
+  ],
+  "limitation": "Disjoint original source/destination regions; ownership meanings unresolved."
+}
