@@ -38,7 +38,7 @@
     }
   },
   "next_tasks": [
-    "Validate function boundaries and annotate additional Kitserver anchors",
+    "Make matching build-specific Kitserver source (src/hook.cpp and src/fserv.h) available in the isolated workspace; then validate additional anchors and resume C_GETTEAMINFO dependency analysis",
     "Recover another small pure helper and test against original x86 instructions",
     "Determine player record bitfield meanings from callers and data access",
     "Trace controller-to-team selection including CPU vs CPU, P1 vs CPU, P1 vs P2",
@@ -60,5 +60,30 @@
     "execution_verified": false,
     "immediate_run_error": "404 Action not found",
     "note": "Schedule creation confirmed; no successful scheduled coding run observed."
+  },
+  "last_run": {
+    "date": "2026-10-11",
+    "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+    "candidate_inspection": {
+      "name": "C_GETTEAMINFO",
+      "address": "0x00865240",
+      "method": "read-only Capstone disassembly of reachable control flow in the exact-hash PC executable",
+      "reachable_instructions": 70,
+      "return_sites": [
+        "0x00865250",
+        "0x008652c5",
+        "0x008652d9",
+        "0x008652ec"
+      ],
+      "direct_calls": [
+        "0x00866d80",
+        "0x00864ef0",
+        "0x00865100"
+      ],
+      "indirect_branches": 0,
+      "status": "candidate CFG reconstructed; no translation or semantic validation"
+    },
+    "tests_run": [],
+    "blocker": "The isolated checkout does not contain the build-specific Kitserver source referenced by the checked-in anchors (including src/hook.cpp and src/fserv.h). C_GETTEAMINFO depends on three called routines and global tables whose behavior is not yet established. The protected shared TBG_PES tree was not traversed. Make the matching Kitserver source available in this isolated workspace before attributing more anchors or attempting this translation."
   }
 }
