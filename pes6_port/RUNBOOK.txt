@@ -30,6 +30,11 @@ From pes6_port, with the pinned executable available, run:
   uv run --with unicorn python native/test_player_fields.py
 The latter builds a native shared library with GCC and executes only the
 isolated reference routine in Unicorn. It does not require running Windows.
+The 0x864fb0 table-address helper has an explicit table-base input. Its
+differential test accepts the exact-hash executable as a read-only argument:
+  python native/test_team_info_address.py <path-to-pinned-pes6-exe>
+It builds with an existing GCC, Clang, or Visual Studio compiler in the system
+temporary directory and removes that temporary library after the test.
 
 Ghidra
 This work used Ghidra 12.1.4 and JDK 21. The PS2 processor extension is
