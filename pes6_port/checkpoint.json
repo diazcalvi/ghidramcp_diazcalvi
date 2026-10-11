@@ -182,5 +182,32 @@
       "python pes6_port/native/test_team_info_address.py E:\\MOCAP\\TBG_PES\\bin\\PES6_installed.exe"
     ],
     "blocker": "The C_GETTEAMINFO caller and table helpers still depend on global table roots and slot-record meanings listed above. The 0x00864fb0 address helper is independently tested, but the larger chain is not yet safe to port or semantically name."
+  },
+  "cloud_access_check": {
+    "date": "2026-10-11",
+    "environment": "fresh cloud workspace; separate checkout at /workspace/ghidramcp_diazcalvi",
+    "branch": "pes6-port-foundation",
+    "branch_head": "5c5d47a3bccbdd8c231bf2d991ea16aee3808449",
+    "branch_owner_check": {
+      "author": "Carlos Diaz-Calvi <diazcalvi@gmail.com>",
+      "configured_author_matches": true,
+      "remote_head_checked_before_checkpoint_edit": "5c5d47a3bccbdd8c231bf2d991ea16aee3808449",
+      "working_tree_was_clean": true
+    },
+    "exact_reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+    "exact_reference_status": "not present under /workspace; no local PE/ISO/BIN candidate found",
+    "authorized_archive_access": "HEAD request to the checkpoint-listed archive URL was blocked by the network proxy with HTTP 403; no archive was downloaded",
+    "extractor_status": "7z, 7zz, p7zip, bsdtar, and unrar unavailable; no software installed",
+    "ghidra_status": "ghidraAnalyzeHeadless unavailable; Java is present",
+    "prior_workspace_status": "/workspace/pes6-analysis absent on the one-time path check",
+    "kitserver_reference": {
+      "repository": "https://github.com/kitserver/kitserver6",
+      "commit": "822caa111cfbf828c56a4e74e5392ae4f2993fcd",
+      "location": "/workspace/kitserver6-reference (outside checkout; reference-only)",
+      "result": "available and read-only inspected; source supplies hook context but not original game instruction bytes for the remaining dependency chain"
+    },
+    "work_completed": "No C helper or differential test was added because original instruction bytes and exact reference binary are unavailable. No baseline helper was duplicated. No game or unknown-source tooling was executed.",
+    "symbols_validated_this_run": [],
+    "next_task": "Make the exact-hash PES6 PC executable and a supported 7-Zip extractor available in the cloud environment using already-authorized sources; then recover instruction-level CFG/state for 0x00865240, 0x00864ef0, 0x00865100, and 0x00866d80 before implementing or testing portable C. Keep the 0x00866d80 implementation reserved as unpublished per task instructions."
   }
 }
