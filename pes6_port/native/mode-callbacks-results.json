@@ -1,0 +1,15 @@
+{
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "reference_function": "0xa4c3b0",
+  "cases": 12000,
+  "passed": true,
+  "seed": "0xa4c3b0",
+  "coverage": [
+    "all twelve defined mode indices",
+    "zero/nonzero context field",
+    "unaligned contexts",
+    "full-buffer side effects and guards",
+    "return stack"
+  ],
+  "limitation": "Callback address configuration only; original callbacks are not executed. Out-of-range indices access uninitialized original stack and are outside the portable API contract."
+}
