@@ -1,0 +1,18 @@
+{
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "reference_function": "0xa4c470",
+  "cases": 24000,
+  "passed": true,
+  "seed": "0xa4c470",
+  "coverage": [
+    "all four state levels",
+    "twelve top-level modes",
+    "matching/mismatched gates",
+    "lower counter reset",
+    "real original callback configurator",
+    "fixed original context mapping",
+    "full-buffer guards",
+    "return stack"
+  ],
+  "limitation": "Defined state levels 0..3 and top-level modes 0..11 only; configured gameplay callbacks are not executed."
+}
