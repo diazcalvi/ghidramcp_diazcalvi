@@ -69,5 +69,158 @@
     ],
     "cases_passed": 10000,
     "command_execution_verified": true
+  },
+  "foundation_history": {
+    "source_commit": "7bb124f1657761bb2aa4a14a77716b7e566b6241",
+    "note": "Historical October 11 evidence and environment-specific blockers retained during reconciliation. Current next_tasks, last_batch and totals above supersede this history; no new native routines or differential cases were added by the merge.",
+    "last_run": {
+      "date": "2026-10-11",
+      "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+      "branch_owner_check": {
+        "owner_commit": "11b1debb72c335f5bc9462bc5ad034dced830fe0",
+        "author": "diazcalvi",
+        "remote_head_last_checked": "11b1debb72c335f5bc9462bc5ad034dced830fe0",
+        "separate_active_pes6_writer": "none; the active Port Ghidra PES6 routine task was this execution"
+      },
+      "kitserver_source": {
+        "repository": "https://github.com/kitserver/kitserver6",
+        "commit": "822caa111cfbf828c56a4e74e5392ae4f2993fcd",
+        "commit_subject": "final prep for 6.8.2",
+        "reference_directory": "../kitserver6-reference (outside the Git checkout; reference-only)",
+        "mapping_confirmed": true,
+        "pes6_pc_getteaminfo": "0x00865240",
+        "pes6_pc_copyplayerdata": "0x00a4b040",
+        "pes6_pc_1_10_getteaminfo": "0x00865370",
+        "pes6_pc_1_10_copyplayerdata": "0x00a4b1a0"
+      },
+      "validated_port": {
+        "name": "team_info_record_address",
+        "address": "0x00864fb0",
+        "caller": "0x00865100 (itself called by C_GETTEAMINFO)",
+        "reachable_instructions": 19,
+        "return_sites": [
+          "0x00864fde",
+          "0x00864fe2"
+        ],
+        "direct_calls": [
+          "0x00866d20"
+        ],
+        "global_dependency": "0x01132068 via the leaf getter at 0x00866d20",
+        "behavior": "Low-word IDs 0x00fe..0x010d map to base + (ID - 0x00fe) * 0x160 when base is nonzero; all other cases return zero.",
+        "test_command": "python pes6_port/native/test_team_info_address.py E:\\MOCAP\\TBG_PES\\bin\\PES6_installed.exe",
+        "differential_cases_passed": 65536,
+        "test_status": "passed; C built with the existing Visual Studio 2019 toolchain; temporary binary removed"
+      },
+      "getteaminfo_dependency_trace": {
+        "entry": {
+          "address": "0x00865240",
+          "reachable_instructions": 70,
+          "return_sites": [
+            "0x00865250",
+            "0x008652c5",
+            "0x008652d9",
+            "0x008652ec"
+          ],
+          "direct_calls": [
+            "0x00866d80",
+            "0x00864ef0",
+            "0x00865100"
+          ],
+          "indirect_branches": 0
+        },
+        "callees": [
+          {
+            "address": "0x00866d80",
+            "reachable_instructions": 87,
+            "return_sites": [
+              "0x00866eab",
+              "0x00866eb1",
+              "0x00866eb4"
+            ],
+            "direct_calls": [
+              "0x00866d50"
+            ],
+            "state_dependencies": [
+              "global slot values at 0x00c97334/0x00c97338 through 0x00866d50",
+              "word at selected slot pointer +0x170"
+            ],
+            "unresolved": "For IDs 0x0126/0x0127, the helper reads the selected record word at +0x170 and reclassifies it through the same range checks. The runtime meanings and invariants of those slot values and record words remain unresolved."
+          },
+          {
+            "address": "0x00864ef0",
+            "reachable_instructions": 62,
+            "return_sites": [
+              "0x00864f4e",
+              "0x00864f7a",
+              "0x00864fa2"
+            ],
+            "direct_calls": [
+              "0x00866d50",
+              "0x00866d80",
+              "0x00866c00",
+              "0x00866ed0"
+            ],
+            "global_or_data_dependencies": [
+              "0x01132010",
+              "0x0113206c",
+              "table at 0x01132098"
+            ]
+          },
+          {
+            "address": "0x00865100",
+            "reachable_instructions": 58,
+            "return_sites": [
+              "0x00865160",
+              "0x0086518c",
+              "0x0086519f"
+            ],
+            "direct_calls": [
+              "0x00866d50",
+              "0x00866d80",
+              "0x00866bf0",
+              "0x00866ec0",
+              "0x00864fb0"
+            ],
+            "global_or_data_dependencies": [
+              "0x0113200c",
+              "0x01132064",
+              "fallback address 0x00c97340"
+            ]
+          }
+        ],
+        "method": "read-only Capstone control-flow traversal of the exact-hash executable; no Ghidra startup or game execution"
+      },
+      "tests_run": [
+        "python pes6_port/native/test_team_info_address.py E:\\MOCAP\\TBG_PES\\bin\\PES6_installed.exe"
+      ],
+      "blocker": "The C_GETTEAMINFO caller and table helpers still depend on global table roots and slot-record meanings listed above. The 0x00864fb0 address helper is independently tested, but the larger chain is not yet safe to port or semantically name."
+    },
+    "cloud_access_check": {
+      "date": "2026-10-11",
+      "environment": "fresh cloud workspace; separate checkout at /workspace/ghidramcp_diazcalvi",
+      "branch": "pes6-port-foundation",
+      "branch_head": "5c5d47a3bccbdd8c231bf2d991ea16aee3808449",
+      "branch_owner_check": {
+        "author": "Carlos Diaz-Calvi <diazcalvi@gmail.com>",
+        "configured_author_matches": true,
+        "remote_head_checked_before_checkpoint_edit": "5c5d47a3bccbdd8c231bf2d991ea16aee3808449",
+        "working_tree_was_clean": true
+      },
+      "exact_reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+      "exact_reference_status": "not present under /workspace; no local PE/ISO/BIN candidate found",
+      "authorized_archive_access": "HEAD request to the checkpoint-listed archive URL was blocked by the network proxy with HTTP 403; no archive was downloaded",
+      "extractor_status": "7z, 7zz, p7zip, bsdtar, and unrar unavailable; no software installed",
+      "ghidra_status": "ghidraAnalyzeHeadless unavailable; Java is present",
+      "prior_workspace_status": "/workspace/pes6-analysis absent on the one-time path check",
+      "kitserver_reference": {
+        "repository": "https://github.com/kitserver/kitserver6",
+        "commit": "822caa111cfbf828c56a4e74e5392ae4f2993fcd",
+        "location": "/workspace/kitserver6-reference (outside checkout; reference-only)",
+        "result": "available and read-only inspected; source supplies hook context but not original game instruction bytes for the remaining dependency chain"
+      },
+      "work_completed": "No C helper or differential test was added because original instruction bytes and exact reference binary are unavailable. No baseline helper was duplicated. No game or unknown-source tooling was executed.",
+      "symbols_validated_this_run": [],
+      "next_task": "Make the exact-hash PES6 PC executable and a supported 7-Zip extractor available in the cloud environment using already-authorized sources; then recover instruction-level CFG/state for 0x00865240, 0x00864ef0, 0x00865100, and 0x00866d80 before implementing or testing portable C. Keep the 0x00866d80 implementation reserved as unpublished per task instructions."
+    }
   }
 }

@@ -30,6 +30,11 @@ From pes6_port, with the pinned executable available, run:
   uv run --with unicorn python native/test_player_fields.py
 The latter builds a native shared library with GCC and executes only the
 isolated reference routine in Unicorn. It does not require running Windows.
+The 0x864fb0 table-address helper has an explicit table-base input. Its
+differential test accepts the exact-hash executable as a read-only argument:
+  python native/test_team_info_address.py <path-to-pinned-pes6-exe>
+It builds with an existing GCC, Clang, or Visual Studio compiler in the system
+temporary directory and removes that temporary library after the test.
 
 Ghidra
 This work used Ghidra 12.1.4 and JDK 21. The PS2 processor extension is
@@ -103,3 +108,5 @@ Setup dependencies0x8b8ab0/0x8b8ac0/0x8b8b00 now pass12,000 comparisons each (36
 Resource status0x8b8bb0, readiness0x8b8ad0 and registration0x8b8bd0 pass12,000 cases each. Readiness returns8-bit bool, only AL defined by original ABI. Registration writes ID/status with signed count boundary. Next resolve setup external initialization dependencies.
 
 Setup wait0x65a6c0 now passes10,000 original-x86 comparisons using actual getter0x65ae40. Tests first dword of entries1..4 at0x1027a90+8*i; returns1 iff all zero. Entry0 and secondary dwords ignored. All16 status combinations, nonzero bytes, guards and ESI preserved. This establishes the table wait condition, not full asset readiness. Rendering initializer0xafa9b0 invokes0xb0e750,0xb0e200(1),0xb0e390,0xb0e1d0(0),optional0xb0e250 and0xb0e260; dependencies remain unresolved. Next recover these and child0xa67ba0 before complete setup.
+
+Foundation reconciliation: the remaining pes6-port-foundation commits are integrated. Historical dependency evidence and cloud-access notes are retained under checkpoint.json foundation_history; use top-level next_tasks and last_batch for current work. The helper source and tests already matched main exactly; this merge adds no native routines or differential cases.
