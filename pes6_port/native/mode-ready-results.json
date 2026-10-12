@@ -1,0 +1,24 @@
+{
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "reference_functions": [
+    "0xa9de10",
+    "0xa4b6b0"
+  ],
+  "cases": 34000,
+  "passed": true,
+  "seed": "0xa9de10",
+  "coverage": [
+    "all four state levels",
+    "all defined next top-level modes",
+    "counter overflow to zero",
+    "forced index0 wrapper and ignored arg",
+    "matching/mismatched gates",
+    "lower counter reset",
+    "real original ready predicate returns1",
+    "real original callback configurator",
+    "fixed original context mapping",
+    "full-buffer guards",
+    "return stack"
+  ],
+  "limitation": "Defined state levels 0..3 and top-level modes 0..11 only; configured gameplay callbacks are not executed."
+}

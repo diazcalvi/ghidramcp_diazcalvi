@@ -1,11 +1,11 @@
 {
-  "date": "2026-10-11",
+  "date": "2026-10-12",
   "preferred_route": "PES6 PC -> native C functions -> shared simulation -> 2D and Unreal C++ adapter",
   "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
   "pc_source_archive": "https://archive.org/download/pro-evolution-soccer-6-pc.7z_202402/NoCD.7z",
   "ps2_source_iso": "https://archive.org/download/pes6_campeonatobrasileiro2007/NEW.ISO",
-  "portable_helpers_tested": 17,
-  "differential_cases_passed": 1483920,
+  "portable_helpers_tested": 19,
+  "differential_cases_passed": 1517920,
   "repository_tests_passed": 42,
   "native_match_simulation_complete": false,
   "renderers_complete": false,
@@ -38,7 +38,7 @@
     }
   },
   "next_tasks": [
-    "Recover forwarded mode targets 0xa9dc40/0xa9de10/0xa9de40 and their calls into actual match initialization; recover controller availability update dependencies",
+    "Recover multi-stage targets0xa9dc40/0xa9de40: map switch cases and loading/setup callees, preserving external dependency behavior; identify mode callers and gameplay ownership",
     "Trace numeric team categories into match setup; do not infer category meanings from numbers alone",
     "Validate function boundaries and annotate additional Kitserver anchors",
     "Recover another small pure helper and test against original x86 instructions",
@@ -65,8 +65,8 @@
   },
   "last_batch": {
     "functions": [
-      "0xa69760",
-      "0xa4b6d0"
+      "0xa9de10",
+      "0xa4b6b0"
     ],
     "cases_passed": 34000,
     "command_execution_verified": true
