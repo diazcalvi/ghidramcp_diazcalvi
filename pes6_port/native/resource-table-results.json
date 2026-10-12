@@ -1,0 +1,33 @@
+{
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "cases": 36000,
+  "functions": [
+    {
+      "reference_function": "0x8b8ab0",
+      "cases": 12000,
+      "passed": true
+    },
+    {
+      "reference_function": "0x8b8ac0",
+      "cases": 12000,
+      "passed": true
+    },
+    {
+      "reference_function": "0x8b8b00",
+      "cases": 12000,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "coverage": [
+    "32 nonnegative resource indices",
+    "signed counts and boundary equality",
+    "null secondary table",
+    "random IDs/handles",
+    "clear both record fields",
+    "full table guards",
+    "unchanged globals",
+    "original forwarding thunks"
+  ],
+  "limitation": "Resource table operations only; allocation/loading dependencies and negative original indices are outside this API contract."
+}
