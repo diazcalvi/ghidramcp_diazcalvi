@@ -1,0 +1,15 @@
+{
+  "reference_sha256": "f61dc6f07401b8bc383d4bb69c001a6bf38f6557eeec7a9c261b581a4effdc1a",
+  "reference_function": "0x65a6c0",
+  "cases": 10000,
+  "passed": true,
+  "coverage": [
+    "all sixteen active-status combinations",
+    "nonzero bits in every byte",
+    "ignored entry0 and secondary dwords",
+    "real original getter",
+    "full source guards unchanged",
+    "callee-saved ESI and return stack"
+  ],
+  "limitation": "Status-table wait only; rendering initialization and full asset loading remain unresolved."
+}
